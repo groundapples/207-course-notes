@@ -1,29 +1,47 @@
+/**
+ * A rectangle with mutable dimensions.
+ */
 public class Rectangle {
-    private double width;
-    private double height;
+  private double width;
+  private double height;
 
-    public Rectangle(double w,double h){
-        this.width=w;
-        this.height=h;
-    }
+  /**
+   * Creates a rectangle.
+   *
+   * @param w the width
+   * @param h the height
+   */
+  public Rectangle(double w, double h) {
+    this.width = w;
+    this.height = h;
+  }
 
-    public double area(){
-        return width*height;
-    }
+  /**
+   * Returns this rectangle's area.
+   *
+   * @return the area
+   */
+  public double area() {
+    return width * height;
+  }
 
-    /**
-     * scales the rectangle
-     * @param factor
-     */
-    public void scale(double factor) {
-      width = width * factor;
-      height = height * factor;
-    }
+  /**
+   * Scales the rectangle.
+   *
+   * @param factor the scale factor
+   */
+  public void scale(double factor) {
+    width = width * factor;
+    height = height * factor;
+  }
 
-    public boolean isLargerThan(Rectangle other){
-        if(area() > other.area())
-            return true;
-        else
-            return false;
-    }
+  /**
+   * Returns whether this rectangle has a larger area than another rectangle.
+   *
+   * @param other the rectangle to compare with
+   * @return true if this rectangle has a larger area
+   */
+  public boolean isLargerThan(Rectangle other) {
+    return area() > other.area();
+  }
 }
